@@ -25,6 +25,7 @@ export default function Main() {
           placeholder="e.g. oregano"
           aria-label="Add ingredient"
           name="ingredient"
+          autoFocus
         />
         <button>Add ingredient</button>
       </form>
