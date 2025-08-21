@@ -9,9 +9,9 @@ export default function Main() {
   const [error, setError] = React.useState(""); // for validation messages
 
   function addIngredient(event) {
-    event.preventDefault(); // prevent form reload
+    event.preventDefault();
     const formData = new FormData(event.currentTarget);
-    const newIngredient = formData.get("ingredient").trim().toLowerCase(); // normalize to lowercase
+    const newIngredient = formData.get("ingredient").trim().toLowerCase();
 
     if (!newIngredient) {
       setError("Please add a valid ingredient!");
@@ -24,8 +24,8 @@ export default function Main() {
     }
 
     setIngredients((prev) => [...prev, newIngredient]);
-    setError(""); // clear error
-    event.currentTarget.reset(); // clear input
+    setError("");
+    event.currentTarget.reset();
   }
 
   async function getRecipe() {
