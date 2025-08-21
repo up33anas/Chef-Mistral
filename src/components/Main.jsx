@@ -11,10 +11,15 @@ export default function Main() {
   function addIngredient(event) {
     event.preventDefault(); // prevent form reload
     const formData = new FormData(event.currentTarget);
-    const newIngredient = formData.get("ingredient").trim();
+    const newIngredient = formData.get("ingredient").trim().toLowerCase(); // normalize to lowercase
 
     if (!newIngredient) {
       setError("Please add a valid ingredient!");
+      return;
+    }
+
+    if (ingredients.some((item) => item.toLowerCase() === newIngredient)) {
+      setError("This ingredient is already in your list!");
       return;
     }
 
