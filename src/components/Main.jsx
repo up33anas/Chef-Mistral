@@ -6,10 +6,21 @@ import { getRecipeFromMistral } from "../ai";
 export default function Main() {
   const [ingredients, setIngredients] = React.useState([]);
   const [recipe, setRecipe] = React.useState("");
+  const [error, setError] = React.useState(""); // for validation messages
 
-  function addIngredient(formData) {
-    const newIngredient = formData.get("ingredient");
-    setIngredients((prevIngredients) => [...prevIngredients, newIngredient]);
+  function addIngredient(event) {
+    event.preventDefault(); // prevent form reload
+    const formData = new FormData(event.currentTarget);
+    const newIngredient = formData.get("ingredient").trim();
+
+    if (!newIngredient) {
+      setError("Please add a valid ingredient!");
+      return;
+    }
+
+    setIngredients((prev) => [...prev, newIngredient]);
+    setError(""); // clear error
+    event.currentTarget.reset(); // clear input
   }
 
   async function getRecipe() {
@@ -25,7 +36,7 @@ export default function Main() {
 
   return (
     <main>
-      <form action={addIngredient} className="add-ingredient-form">
+      <form onSubmit={addIngredient} className="add-ingredient-form">
         <input
           type="text"
           placeholder="e.g. oregano"
@@ -34,8 +45,10 @@ export default function Main() {
           autoFocus
           autoComplete="off"
         />
-        <button>Add ingredient</button>
+        <button type="submit">Add ingredient</button>
       </form>
+
+      {error && <p style={{ color: "red" }}>{error}</p>}
 
       {ingredients.length > 0 && (
         <IngredientsList ingredients={ingredients} getRecipe={getRecipe} />
