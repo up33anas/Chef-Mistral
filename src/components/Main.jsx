@@ -13,8 +13,14 @@ export default function Main() {
   }
 
   async function getRecipe() {
-    const response = await getRecipeFromMistral(ingredients);
-    setRecipe(response);
+    setRecipe("Preparing your recipe... Please wait!");
+    try {
+      const response = await getRecipeFromMistral(ingredients);
+      setRecipe(response);
+    } catch (err) {
+      setRecipe("Sorry, something went wrong while preparing your recipe.");
+      console.error(err);
+    }
   }
 
   return (
@@ -26,6 +32,7 @@ export default function Main() {
           aria-label="Add ingredient"
           name="ingredient"
           autoFocus
+          autoComplete="off"
         />
         <button>Add ingredient</button>
       </form>

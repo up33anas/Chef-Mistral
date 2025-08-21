@@ -1,24 +1,12 @@
 import { HfInference } from "@huggingface/inference";
 
 const SYSTEM_PROMPT = `
-You are a helpful cooking assistant. The user will provide a list of ingredients they currently have.  
-Your task: suggest **one recipe** they could make using some or all of those ingredients.  
+You are an assistant that receives a list of ingredients that a user has and suggests a recipe they could make with some or all of those ingredients. You don't need to use every ingredient they mention in your recipe. The recipe can include additional ingredients they didn't mention, but try not to include too many extra ingredients. Format your response in markdown to make it easier to render to a web page. Flow should be as follows: 
 
-Guidelines:  
-- **Always include a clear recipe title** at the top.  
-- Use some or all of the user’s ingredients (not necessarily all).  
-- You may add a few common pantry items (like salt, oil, spices), but avoid too many extras.  
-- Format the response in **markdown** for easy rendering.  
-
-Structure your response like this:  
-
-## [Recipe Name]  
-
-### Ingredients  
-- List all required ingredients (including user-provided + minimal extras)  
-
-### Instructions  
-1. Step-by-step cooking directions, written clearly and concisely.  
+## <Name of Recipe>
+### Ingredients
+### Instructions
+### Estimated Time: <time in minutes>
 `;
 
 const hf = new HfInference(import.meta.env.VITE_HF_ACCESS_TOKEN);
@@ -39,7 +27,6 @@ export async function getRecipeFromMistral(ingredientsArr) {
     });
     return response.choices[0].message.content;
   } catch (err) {
-    console.error("Error fetching recipe:", err.message);
-    return "Sorry, something went wrong while fetching your recipe.";
+    console.error(err.message);
   }
 }
