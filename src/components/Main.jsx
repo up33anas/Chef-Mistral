@@ -6,7 +6,15 @@ import { getRecipeFromMistral } from "../ai";
 export default function Main() {
   const [ingredients, setIngredients] = React.useState([]);
   const [recipe, setRecipe] = React.useState("");
-  const [error, setError] = React.useState(""); // for validation messages
+  const [showRecipe, setShowRecipe] = React.useState(false);
+  const [error, setError] = React.useState("");
+  const recipeSection = React.useRef(null);
+
+  React.useEffect(() => {
+    if (recipe !== "" && recipeSection.current !== null) {
+      recipeSection.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [recipe]);
 
   function addIngredient(event) {
     event.preventDefault();
@@ -29,7 +37,14 @@ export default function Main() {
   }
 
   async function getRecipe() {
+    if (showRecipe) {
+      setShowRecipe(false);
+      return;
+    }
+
     setRecipe("Preparing your recipe... Please wait!");
+    setShowRecipe(true);
+
     try {
       const response = await getRecipeFromMistral(ingredients);
       setRecipe(response);
@@ -56,10 +71,15 @@ export default function Main() {
       {error && <p style={{ color: "red" }}>{error}</p>}
 
       {ingredients.length > 0 && (
-        <IngredientsList ingredients={ingredients} getRecipe={getRecipe} />
+        <IngredientsList
+          ref={recipeSection}
+          ingredients={ingredients}
+          getRecipe={getRecipe}
+          showRecipe={showRecipe}
+        />
       )}
 
-      {recipe && <AIRecipe recipe={recipe} />}
+      {showRecipe && <AIRecipe recipe={recipe} />}
     </main>
   );
 }
