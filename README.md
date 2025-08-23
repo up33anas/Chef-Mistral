@@ -1,4 +1,4 @@
-# [Chef-Mistral]{https://chef-mistral-snowy.vercel.app/}
+# [!Chef-Mistral]{https://chef-mistral-snowy.vercel.app/}
 
 ### A web app that uses AI to suggest recipes based on the ingredients that the user enters.
 
