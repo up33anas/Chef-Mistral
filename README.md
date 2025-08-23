@@ -1,4 +1,4 @@
-[![Chef-Mistral](https://img.shields.io/badge/Chef-Mistral-View%20Live-brightgreen)](https://chef-mistral-snowy.vercel.app/)
+# [![Chef-Mistral](https://img.shields.io/badge/Chef-Mistral-View%20Live-brightgreen)](https://chef-mistral-snowy.vercel.app/)
 
 ### A web app that uses AI to suggest recipes based on the ingredients that the user enters.
 
