@@ -7,13 +7,13 @@
 
 ---
 
-## 🤔 Why “Chef Mistral”?
+## Why “Chef Mistral”?
 
 Because the app uses the **Hugging Face Mistral API** to generate recipes. The AI acts as the “chef” behind the scenes, transforming your ingredients into personalized recipes — hence the name!
 
 ---
 
-## ✨ Features
+## Features
 
 - Add the ingredients you have on hand.
 - Instantly generate an AI-powered recipe with:
@@ -25,7 +25,7 @@ Because the app uses the **Hugging Face Mistral API** to generate recipes. The A
 
 ---
 
-## ⚙️ Tech Stack & Highlights
+## Tech Stack & Highlights
 
 - **Frontend:** HTML, CSS, JavaScript, React + Vite
 - **State Management:** React Hooks
@@ -34,7 +34,7 @@ Because the app uses the **Hugging Face Mistral API** to generate recipes. The A
 
 ---
 
-## 📝 Lessons Learned
+## Lessons Learned
 
 - Controlled inputs and form validation in React.
 - Making **async API calls** with proper error handling.
@@ -43,3 +43,15 @@ Because the app uses the **Hugging Face Mistral API** to generate recipes. The A
 ---
 
 ## 📂 Project Structure
+
+src/
+├─ api/ # API calls to Hugging Face
+├─ components/ # Reusable React components
+├─ pages/ # Main pages
+├─ services/ # API helper functions
+├─ App.tsx # Main app component
+└─ main.tsx # App entry point
+
+public/
+├─ index.html # HTML entry point
+└─ assets/ # Images, icons, placeholders
