@@ -2,8 +2,7 @@
 
 **Chef Mistral** is a fun, AI-powered web app that helps you turn the ingredients you have on hand into delicious recipes instantly. Built with HTML, CSS, and React, this project was my first real-world application while learning frontend development — a great way to practice what I’ve learned over just a few days!
 
-🎬 **Demo Video of running app:** [Watch the demo](https://github.com/up33anas/Chef-Mistral/blob/main/chef.mp4)
-🌐 **Live App:** [Try it online](https://chef-mistral-snowy.vercel.app)
+🌐 **Live App:** [Try it online](https://lnkd.in/e56qmcpG)  
 
 ---
 
