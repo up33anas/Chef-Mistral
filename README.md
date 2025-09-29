@@ -1,28 +1,45 @@
-# 🍳 Chef-Suggest
+# 🍳 Chef Mistral
 
-**Chef-Suggest** is a web application that uses AI to suggest recipes based on the ingredients you have on hand. Enter the ingredients you want to use, and let the AI generate delicious recipe ideas for you!
+**Chef Mistral** is a fun, AI-powered web app that helps you turn the ingredients you have on hand into delicious recipes instantly. Built with HTML, CSS, and React, this project was my first real-world application while learning frontend development — a great way to practice what I’ve learned over just a few days!
 
-🎬 **Video Demo:** [Watch the course video here](https://github.com/up33anas/chef.mp4)  
-🌐 **Live App:** [Try it online here](https://chef-mistral-snowy.vercel.app)
-
-This project is inspired by the **Chef-Claude** app from the Scrimba React course and demonstrates how to integrate AI APIs into a React frontend.
+🎬 **Course Video:** [Watch the video demo](https://gi)  
+🌐 **Live App:** [Try it online](https://lnkd.in/e56qmcpG)
 
 ---
 
-## 🛠 Technologies Used
+## 🤔 Why “Chef Mistral”?
 
-- **Frontend:** React, HTML, CSS, JavaScript
-- **Backend/API Integration:** Hugging Face Inference API
-- **HTTP Client:** Axios
-- **Styling:** CSS / Tailwind (optional)
+Because the app uses the **Hugging Face Mistral API** to generate recipes. The AI acts as the “chef” behind the scenes, transforming your ingredients into personalized recipes — hence the name!
 
 ---
 
 ## ✨ Features
 
-- Input ingredients you have in your kitchen.
-- Receive AI-generated recipe suggestions in real-time.
-- User-friendly interface with interactive components.
-- Responsive design for desktop and mobile.
+- Add the ingredients you have on hand.
+- Instantly generate an AI-powered recipe with:
+  - Recipe name
+  - Ingredients list
+  - Step-by-step instructions
+  - Estimated cooking time
+- Save time, reduce food waste, and make cooking more fun and stress-free.
 
 ---
+
+## ⚙️ Tech Stack & Highlights
+
+- **Frontend:** HTML, CSS, JavaScript, React + Vite
+- **State Management:** React Hooks
+- **AI Integration:** Hugging Face Mistral API
+- **UI Features:** Responsive design, live ingredient preview, dynamic recipe generation
+
+---
+
+## 📝 Lessons Learned
+
+- Controlled inputs and form validation in React.
+- Making **async API calls** with proper error handling.
+- Creating an **interactive UI** that responds instantly to user actions.
+
+---
+
+## 📂 Project Structure
