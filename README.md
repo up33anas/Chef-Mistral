@@ -45,13 +45,13 @@ Because the app uses the **Hugging Face Mistral API** to generate recipes. The A
 ## 📂 Project Structure
 
 src/
-├─ api/ # API calls to Hugging Face
-├─ components/ # Reusable React components
-├─ pages/ # Main pages
-├─ services/ # API helper functions
-├─ App.tsx # Main app component
-└─ main.tsx # App entry point
+├── api/ # API calls to Hugging Face
+├── components/ # Reusable React components
+├── pages/ # Main pages
+├── services/ # API helper functions
+├── App.tsx # Main app component
+└── main.tsx # App entry point
 
 public/
-├─ index.html # HTML entry point
-└─ assets/ # Images, icons, placeholders
+├── index.html # HTML entry point
+└── assets/ # Images, icons, placeholders
